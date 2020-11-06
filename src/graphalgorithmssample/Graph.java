@@ -5,6 +5,9 @@
  */
 package graphalgorithmssample;
 
+import java.util.ArrayList;
+import java.util.HashSet;
+
 /**
  *
  * @author zhuan
@@ -23,11 +26,25 @@ public class Graph {
         return matrix;
     }
 
-    Graph prim() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public Graph prim() {
+        int[][] treeMatrix=new int[matrix.length][matrix.length];
+        ArrayList<Integer> includeSet=new ArrayList();
+        includeSet.add(0);
+        while (includeSet.size()<matrix.length) {
+            int[] newPath = getNearestPath(includeSet);
+            treeMatrix[newPath[0]][newPath[1]]=newPath[2];
+            treeMatrix[newPath[1]][newPath[0]]=newPath[2];
+            includeSet.add(newPath[1]);
+        }
+        return new Graph(treeMatrix);
+        
     }
     
-    Graph kruskal() {
+    public Graph kruskal() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    private int[] getNearestPath(ArrayList<Integer> includeSet) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
