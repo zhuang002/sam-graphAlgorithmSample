@@ -13,6 +13,34 @@ import java.util.Set;
 /**
  *
  * @author zhuan
+ * 
+ * testing data:
+ * 
+ * 
+12 23
+0 1 2
+0 2 2
+1 2 2
+1 4 3
+2 3 1
+2 5 3
+2 9 2
+3 4 2
+3 5 6
+3 8 8
+3 10 3
+4 10 2
+5 6 1
+5 7 4
+5 8 5
+5 9 3
+6 8 4
+6 10 4
+7 8 3
+7 9 3
+8 9 7
+8 11 1
+10 11 2
  */
 public class Graph {
     int[][] matrix=null;
