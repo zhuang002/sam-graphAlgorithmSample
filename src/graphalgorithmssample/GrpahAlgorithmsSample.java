@@ -20,9 +20,14 @@ public class GrpahAlgorithmsSample {
         // TODO code application logic here
         int[][] matrix=readInMatrix();
         Graph graph=new Graph(matrix);
-        Graph tree=graph.prim();// tree=grph.kruskal();
+        Graph tree=graph.kruskal();// tree=grph.kruskal();
         matrix=tree.getMatrix();
+        System.out.println("result of Kruskal");
         printMetrix(matrix);
+        
+        System.out.println("result of Prim");
+        tree=graph.prim();
+        printMetrix(tree.getMatrix());
     }
 
     private static int[][] readInMatrix() {
