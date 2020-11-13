@@ -75,6 +75,7 @@ public class Graph {
                     if (subtree1!=subtree2) { // compare the reference
                         // the 2 subtrees are not the same. we need to merge them.
                         subtree1.addAll(subtree2);
+                        subtree1.add(path);
                         subtrees.remove(subtree2);
                     }
                 }
