@@ -28,6 +28,11 @@ public class GrpahAlgorithmsSample {
         System.out.println("result of Prim");
         tree=graph.prim();
         printMetrix(tree.getMatrix());
+        
+        
+        System.out.println("Calculate shortest distance");
+        int distance=tree.Dijkstra(0,6);
+        System.out.println("distance(0,6)="+distance);
     }
 
     private static int[][] readInMatrix() {
