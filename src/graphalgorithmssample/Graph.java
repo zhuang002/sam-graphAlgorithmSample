@@ -6,6 +6,7 @@
 package graphalgorithmssample;
 
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.Collections;
 import java.util.HashSet;
 import java.util.Set;
@@ -164,7 +165,40 @@ public class Graph {
     }
 
     int Dijkstra(int start, int end) {
+        Set<Integer> current=new HashSet();
+        Set<Integer> used=new HashSet();
+        int[] distances=new int[this.matrix.length]; // the index is the node id, the value is the nearest distance to the start node.
+        for (int i=0;i<distances.length;i++)
+            distances[i]=-1;
+        distances[start]=0;
+        current.add(start); //starting from node start, 
+                            //so that the set of nodes being processed initally contains only start 
+        
+        while (!current.isEmpty()) {
+            // select the nearest node in processed node set to expand
+            int nearestNode=getNearestNode(current,distances); 
+            // get neighbours of the nearest node, and add to the process node set
+            current.addAll(getNeighbours(nearestNode,used,distances)); 
+            
+            // remove the node(the nearest node that has just been processed from the process node set)
+            current.remove(nearestNode);
+            // add the processed node (nearest node) to the used node set.
+            used.add(nearestNode);
+        }
+        
+        
+        
+    }
+
+    private int getNearestNode(Set<Integer> current, int[] distances) {
+        // return a nearest node to the start node.
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    private Set<Integer> getNeighbours(int node, Set<Integer> used, int[] distances) {
+        // get unprocessed neighbout nodes of a node. 
+        // and calculate the distances of this neighbours from the start node.
+        return null;
     }
 
     
